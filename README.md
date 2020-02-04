@@ -1,0 +1,2 @@
+# omd
+Learn python 
