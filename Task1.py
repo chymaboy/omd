@@ -22,16 +22,11 @@ def step2_umbrella():
         'Но какой выбрать? '
     )
     option = ''
-    options = {'красный': 'red', 'синий': 'blue', 'зеленый': 'green'}
+    options = {'красный': step3_red, 'синий': step3_blue, 'зеленый': step3_green}
     while option not in options:
         option = input('Выберите: {}/{}/{}\n'.format(*options))
 
-    if options[option] == 'red':
-        return step3_red()
-    elif options[option] == 'blue':
-        return step3_blue()
-    elif options[option] == 'green':
-        return step3_green()
+    return options.get(option)()
 
 
 def step2_no_umbrella():
@@ -55,7 +50,7 @@ def step3_mushroom():
         'Может быть, познакомиться с ней?'
     )
     option = ''
-    options = {'крукнуть': True, 'молчать': False}
+    options = {'крикнуть': True, 'молчать': False}
     while option not in options:
         option = input('Выберите: {}/{}\n'.format(*options))
 
@@ -81,14 +76,11 @@ def step3_red():
         'Надо выбрать другой.'
     )
     option = ''
-    options = {'синий': 'blue', 'зеленый': 'green'}
+    options = {'синий': step3_blue, 'зеленый': step3_green}
     while option not in options:
         option = input('Выберите: {}/{}\n'.format(*options))
 
-    if options[option] == 'blue':
-        return step3_blue()
-    elif options[option] == 'green':
-        return step3_green()
+    return options.get(option)()
 
 
 def step3_blue():
@@ -97,14 +89,11 @@ def step3_blue():
         'Надо выбрать другой.'
     )
     option = ''
-    options = {'красный': 'red', 'зеленый': 'green'}
+    options = {'красный': step3_red, 'зеленый': step3_green}
     while option not in options:
         option = input('Выберите: {}/{}\n'.format(*options))
 
-    if options[option] == 'red':
-        return step3_red()
-    elif options[option] == 'green':
-        return step3_green()
+    return options.get(option)()
 
 
 def step3_green():
@@ -113,7 +102,7 @@ def step3_green():
         'Какой аксессуар подобрать к нему?'
     )
     option = ''
-    options = {'сумочка': 0, 'очечи': 1, 'галстук': 2}
+    options = {'сумочка': None, 'очечи': None, 'галстук': None}
     while option not in options:
         option = input('Выберите: {}/{}/{}\n'.format(*options))
 
